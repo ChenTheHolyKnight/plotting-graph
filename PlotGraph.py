@@ -24,6 +24,9 @@ def plotGraph(df, filename):
     sep = '.'
     name = filename.split(sep, 1)[0]
     plt.savefig('./images/' + name + '.png')  # generated plots will be saved inside the images folder
+    plt.clf()
+    plt.cla()
+    plt.close()
     return
 
 
