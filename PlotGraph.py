@@ -22,25 +22,33 @@ def plotGraph(df, filename):
     y0 = df[df.columns[1]]
     y1 = df[df.columns[2]]
     y2 = df[df.columns[3]]
+    y3 = df[df.columns[4]]
 
-    plt.figure(figsize=(20, 4))
-    plt.subplot(1, 3, 1)
+    plt.figure(figsize=(20, 8))
+    plt.subplot(2, 2, 1)
     plt.plot(x, y0, 'g--')
     plt.title('x-orientation vs time')
     plt.ylabel('object orientation')
     plt.xlabel('time')
 
-    plt.subplot(1, 3, 2)
+    plt.subplot(2, 2, 2)
     plt.plot(x, y1, 'b--')
     plt.title('y-orientation vs time')
     plt.ylabel('object orientation')
     plt.xlabel('time')
 
-    plt.subplot(1, 3, 3)
+    plt.subplot(2, 2, 3)
     plt.plot(x, y2, 'r--')
     plt.title('z-orientation vs time')
     plt.ylabel('object orientation')
     plt.xlabel('time')
+
+    plt.subplot(2, 2, 4)
+    plt.plot(x, y3, 'y--')
+    plt.title('displacement vs time')
+    plt.ylabel('object orientation')
+    plt.xlabel('time')
+
     plt.tight_layout()
     sep = '.'
     name = filename.split(sep, 1)[0]
