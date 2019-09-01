@@ -15,7 +15,7 @@ class Test(object):
         self.__dict__ = data
 
 
-def readFile(filename,f):
+def readFile(filename, f):
     dp = path.joinpath(filename)
     with open(dp, 'r') as json_file:
         data = json.load(json_file)
@@ -26,8 +26,6 @@ def readFile(filename,f):
     # OfficeStage = office["stages"]
     # print(office["stages"][0])
     # # questions = office["stages"][0]["questions"]
-
-
 
     for scenario in test1.scenarios:
         scenario_name = scenario["ScenarioName"]
@@ -49,7 +47,7 @@ def main():
 
     onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
     for file in onlyfiles:
-        df = readFile(file,f)
+        df = readFile(file, f)
 
     return
 
