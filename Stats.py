@@ -5,9 +5,10 @@ from scipy import stats
 from numpy.random import seed
 from numpy.random import randn
 from matplotlib import pyplot
+from scipy.stats import kstest
 
 
-def do_test(list1, list2):
+def do_t_test(list1, list2):
     # Define 2 random distributions
     # Sample Size
     # N = 10
@@ -48,6 +49,10 @@ def do_test(list1, list2):
     print("p = " + str(p2))
 
 
+def do_ks_test(list):
+    x = kstest(list, "norm")
+    print(x)
+
 if __name__ == '__main__':
     N = 10
     list1 = np.random.randn(N) + 2
@@ -55,4 +60,6 @@ if __name__ == '__main__':
 
     pyplot.hist(list1)
     pyplot.show()
-    do_test(list1, list2)
+    do_t_test(list1, list2)
+
+    do_ks_test(list1)
