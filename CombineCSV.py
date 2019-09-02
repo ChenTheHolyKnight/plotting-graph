@@ -3,7 +3,6 @@ from pathlib import Path
 from os import listdir
 from os.path import isfile, join
 import pandas as pd
-import json
 import os
 
 # change path to the location of Records folder when you use this on your device
@@ -11,16 +10,16 @@ jsonFolderPath = './UserCSV'
 path = Path(jsonFolderPath).absolute()
 
 
-class Test(object):
-    def __init__(self, data):
-        self.__dict__ = data
-
-
-def readFile(filename, f):
+def readFile(filename, finalDf):
     dp = path.joinpath(filename)
     data = pd.read_csv(dp)
 
-    
+    count = 0
+    for index, row in data.iterrows():
+        if row['correctness'] is True:
+            count = count + 1
+
+    return data
 
 
 def main():
@@ -35,15 +34,19 @@ def main():
          "O_S0_Printer", "O_S1_OfficeChair", "O_S1_Printer", "L_S0_Shelf", "L_S0_Shelf1", "L_S1_RoundBase1",
          "L_S1_RoundVase2",
          "L_S1_Vase", "L_S2_Orchid", "L_S2_CornPlant", "L_S3_StackedBooks", "L_S3_StackedBooks1",
-         "L_S4_FlaskPhilodendron", "L_S4_FlaskPhilodendron1", "O_S0_Cup", "O_S0_CupSmall", "O_S0_SmallestCup",
-         "O_S1_TallDrawer", "O_S1_Drawer", "O_S2_HospitalBed", "O_S2_ECGMonitor", "O_S2_IVStand"])
+         "L_S4_FlaskPhilodendron", "L_S4_FlaskPhilodendron1", "delete1", "delete2", "delete3", 'delete4', "H_S0_Cup",
+         "H_S0_CupSmall", "H_S0_SmallestCup",
+         "H_S1_TallDrawer", "H_S1_Drawer", "H_S2_HospitalBed", "H_S2_ECGMonitor", "H_S2_IVStand"])
     onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
-
-    dp = path.joinpath(onlyfiles[0])
-    data = pd.read_csv(dp)
+    finalDf = pd.DataFrame()
     for file in onlyfiles:
-        df = readFile(file, f)
-
+        df = readFile(file, finalDf)
+        user = df['user'].values.tolist()
+        df1 = df['correctness'].values.tolist()
+        list = []
+        list.append(user[0])
+        list.extend(df1)
+        f.writerow(list)
     return
 
 
