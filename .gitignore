@@ -66,3 +66,7 @@ UserData/
 test.csv
 
 user5data.json
+
+CombinedCSV/
+
+*.csv
