@@ -4,6 +4,7 @@ from os import listdir
 from os.path import isfile, join
 import pandas as pd
 import json
+import os
 
 # change path to the location of Records folder when you use this on your device
 jsonFolderPath = 'E:/Part4Project/PlotComponents/UserData'
@@ -42,11 +43,14 @@ def readFile(filename, f):
 
 
 def main():
-    f = csv.writer(open("test.csv", "w"))
-    f.writerow(["user", "scenario", "stage", "object_name", "correctness"])
-
+    directory = 'UserCSV'
+    if not os.path.exists(directory):
+        os.makedirs(directory)
     onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
     for file in onlyfiles:
+
+        f = csv.writer(open('./'+directory+'/'+file.split('.')[0]+".csv", "w"))
+        f.writerow(["user", "scenario", "stage", "object_name", "correctness"])
         df = readFile(file, f)
 
     return
