@@ -73,7 +73,16 @@ def main():
     process_whit(df1, df2)
 
     df_total = pd.DataFrame()
-    df_total['Questionnaire']
+    df_total['VR_1'] = df1['Qustionnaire1']
+    df_total['VR_2'] = df1['Qustionnaire2']
+
+    df_total['Reading_1'] = df2['Qustionnaire1']
+    df_total['Reading_2'] = df2['Qustionnaire2']
+
+    df_total.boxplot(
+        column=['VR_1', 'Reading_1', 'VR_2', 'Reading_2'])
+    plt.show()
+
     return
 
 
