@@ -1,7 +1,7 @@
 # Import the packages
 import numpy as np
 from scipy import stats
-
+from scipy.stats import mannwhitneyu
 from numpy.random import seed
 from numpy.random import randn
 from matplotlib import pyplot
@@ -53,6 +53,10 @@ def do_ks_test(list):
     x = kstest(list, "norm")
     print(x)
 
+def do_man_whitney_u_test(list1,list2):
+    stat, p = mannwhitneyu(list1, list2)
+    print('Statistics=%.3f, p=%.3f' % (stat, p))
+
 if __name__ == '__main__':
     N = 10
     list1 = np.random.randn(N) + 2
@@ -63,3 +67,5 @@ if __name__ == '__main__':
     do_t_test(list1, list2)
 
     do_ks_test(list1)
+
+    do_man_whitney_u_test(list1,list2)
