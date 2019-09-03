@@ -7,7 +7,7 @@ import json
 import os
 
 # change path to the location of Records folder when you use this on your device
-jsonFolderPath = 'E:/Part4Project/PlotComponents/UserData'
+jsonFolderPath = './JsonData'
 path = Path(jsonFolderPath).absolute()
 
 

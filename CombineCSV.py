@@ -33,8 +33,7 @@ def main():
          "O_S0_Monitor",
          "O_S0_Printer", "O_S1_OfficeChair", "O_S1_Printer", "L_S0_Shelf", "L_S0_Shelf1", "L_S1_RoundBase1",
          "L_S1_RoundVase2",
-         "L_S1_Vase", "L_S2_Orchid", "L_S2_CornPlant", "L_S3_StackedBooks", "L_S3_StackedBooks1",
-         "L_S4_FlaskPhilodendron", "L_S4_FlaskPhilodendron1", "delete1", "delete2", "delete3", 'delete4', "H_S0_Cup",
+         "L_S1_Vase", "L_S2_Orchid", "L_S2_CornPlant", "L_S3_StackedBooks", "L_S3_StackedBooks1", "H_S0_Cup",
          "H_S0_CupSmall", "H_S0_SmallestCup",
          "H_S1_TallDrawer", "H_S1_Drawer", "H_S2_HospitalBed", "H_S2_ECGMonitor", "H_S2_IVStand"])
     onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]

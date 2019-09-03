@@ -70,3 +70,7 @@ user5data.json
 CombinedCSV/
 
 *.csv
+
+JsonData/
+
+BoxPlotAnalysis/VR_DATA_PLOT.png
