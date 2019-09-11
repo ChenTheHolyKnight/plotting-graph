@@ -78,8 +78,8 @@ def draw_box_plot(list1, list2):
 
     plt.figure()
 
-    bpl = plt.boxplot(list1, positions=np.array(range(len(list1))) * 2.0 - 0.4, sym='', widths=0.6)
-    bpr = plt.boxplot(list2, positions=np.array(range(len(list2))) * 2.0 + 0.4, sym='', widths=0.6)
+    bpl = plt.boxplot(list1, positions=np.array(range(len(list1))) * 2.0 - 0.4, widths=0.6, showfliers=True)
+    bpr = plt.boxplot(list2, positions=np.array(range(len(list2))) * 2.0 + 0.4, widths=0.6, showfliers=True)
     set_box_color(bpl, '#D7191C')  # colors are from http://colorbrewer2.org/
     set_box_color(bpr, '#2C7BB6')
 
