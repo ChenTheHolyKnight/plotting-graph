@@ -10,9 +10,11 @@ from matplotlib import pyplot
 
 from Stats import do_ks_test, do_man_whitney_u_test
 
+# jsonFolderPath = './HadEarthquakeDrills.csv'
 jsonFolderPath = './ProcessedVR First Data .csv'
 path = Path(jsonFolderPath).absolute()
 
+# jsonFolderPath1 = './DidnotHaveEarthquakeDrill.csv'
 jsonFolderPath1 = './ProcessedReading First Data .csv'
 path1 = Path(jsonFolderPath1).absolute()
 
@@ -64,27 +66,36 @@ def process_whit(df1, df2):
     listb3 = df2['Qustionnaire3'].values.tolist()
     do_man_whitney_u_test(lista3, listb3)
 
+    do_man_whitney_u_test(listb2, listb3)
+
 
 def main():
-    # normality_test()
+    normality_test()
 
     df1 = readFile(path)
     df2 = readFile(path1)
-    process_whit(df1, df2)
+    # process_whit(df1, df2)
 
-    df_total = pd.DataFrame()
-    df_total['VR_1'] = df1['Qustionnaire1']
-    df_total['VR_2'] = df1['Qustionnaire2']
-    df_total['VR_3'] = df1['Qustionnaire3']
+    # df_total = pd.DataFrame()
+    # df_total['VR_1'] = df1['Qustionnaire1']
+    # df_total['VR_2'] = df1['Qustionnaire2']
+    # df_total['VR_3'] = df1['Qustionnaire3']
+    #
+    # df_total['Reading_1'] = df2['Qustionnaire1']
+    # df_total['Reading_2'] = df2['Qustionnaire2']
+    # df_total['Reading_3'] = df2['Qustionnaire3']
+    #
+    # df_total.boxplot(
+    #     column=['VR_1', 'Reading_1', 'VR_2', 'Reading_2', 'VR_3', 'Reading_3'])
+    # # plt.show()
 
-    df_total['Reading_1'] = df2['Qustionnaire1']
-    df_total['Reading_2'] = df2['Qustionnaire2']
-    df_total['Reading_3'] = df2['Qustionnaire3']
-
-    df_total.boxplot(
-        column=['VR_1', 'Reading_1', 'VR_2', 'Reading_2'])
-    # plt.show()
-    plt.savefig('./' + '/VR_Reading_Box_Plot' + '.png')
+    # df_total = pd.DataFrame()
+    # df_total['Trained'] = df1['Questionnaire1']
+    # df_total['UnTrained'] = df2['Questionnaire1']
+    #
+    # df_total.boxplot(column=['Trained', 'UnTrained'])
+    # plt.title('Questionnaire Result')
+    # plt.savefig('./' + '/VR_Reading_Box_Plot' + '.svg')
     return
 
 
