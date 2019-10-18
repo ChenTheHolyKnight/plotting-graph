@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pandas as pd
 
-# A script for counting the number of correct answers from the csv files. 
+# A script for counting the number of correct answers from the csv files.
 csvFolderPath = './UserQuestionnaire'
 path = Path(csvFolderPath).absolute()
 
