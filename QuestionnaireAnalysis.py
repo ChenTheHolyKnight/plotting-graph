@@ -1,10 +1,10 @@
-from pathlib import Path
 from os import listdir
 from os.path import isfile, join
-import pandas as pd
-import matplotlib.pyplot as plt
+from pathlib import Path
 
-# change path to the location of Records folder when you use this on your device
+import pandas as pd
+
+# A script for counting the number of correct answers from the csv files. 
 csvFolderPath = './UserQuestionnaire'
 path = Path(csvFolderPath).absolute()
 

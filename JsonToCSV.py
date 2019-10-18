@@ -6,7 +6,9 @@ import pandas as pd
 import json
 import os
 
-# change path to the location of Records folder when you use this on your device
+
+# A script to change the json file to the csv file.
+# Ensure the folder contains the json data collected from the mobile application.
 jsonFolderPath = './JsonData'
 path = Path(jsonFolderPath).absolute()
 

@@ -5,7 +5,8 @@ from os.path import isfile, join
 import pandas as pd
 import os
 
-# change path to the location of Records folder when you use this on your device
+# Combine the converted csv file to one csv file
+# ensure the folder exists and contains the converted csv files in it.
 jsonFolderPath = './UserCSV'
 path = Path(jsonFolderPath).absolute()
 

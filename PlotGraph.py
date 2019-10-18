@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # change path to the location of Records folder when you use this on your device
+# this folder is the folder that contains the data of the objects for the research.
 csvFolderPath = 'E:/Part4Project/PreviousProject/vr-earthquake-lab/VR Earthquake Lab/Records'
 path = Path(csvFolderPath).absolute()
 

@@ -7,7 +7,7 @@ from numpy.random import randn
 from matplotlib import pyplot
 from scipy.stats import kstest
 
-
+# A group of functions that can be used for data anlysis.
 def do_t_test(list1, list2):
     # Define 2 random distributions
     # Sample Size

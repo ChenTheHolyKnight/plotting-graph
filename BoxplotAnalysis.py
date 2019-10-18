@@ -6,7 +6,8 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 
-# change path to the location of Records folder when you use this on your device
+# This is the script for plotting the Box Whisker plot
+# ensure your device has this folder and it contains the csv files for Reading first group and VR first group.
 jsonFolderPath = './BoxPlotAnalysis'
 path = Path(jsonFolderPath).absolute()
 
